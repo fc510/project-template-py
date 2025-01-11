@@ -1,20 +1,22 @@
 #!/usr/bin/env bash
-
-PROJECT_NAME="project_name"
-PROJECT_DESC="A python project"
+source ./.env
 
 # in ./project-template-py folder 
 uv init --name ${PROJECT_NAME}
 
 # create and initialize git repo
-git init --initial-branch main ${PROJECT_NAME}
-git config user.name "fc510"
-git config user.email "frostyblueye@gmail.com"
+git init --initial-branch main .
+git config user.name "${GIT_USERNAME}"
+git config user.email "${GIT_USEREMAIL}"
 git config init.defaultBranch main
 
-# setup virtual env
-uv add -r ./requirements.txt
-uv add -r ./requirements-test.txt
+cat >> ./requirements.txt << EOF
+# requirements.txt
+EOF
+
+cat >> ./requirements-test.txt << EOF
+pytest
+EOF
 
 # add & commit changes
 git add . && git commit -m "initial commit"
