@@ -43,6 +43,10 @@
     "python.venvFolders": [],
     "python.venvPath": "~/.venv",
     "python.pythonPath": "",
+    "terminal.integrated.env.linux": {
+        "PYTHONPATH": "${workspaceFolder}/src",
+      },
+    "python.envFile": "${workspaceFolder}/.env",    
     "workbench.colorTheme": "Monokai",
     "telemetry.telemetryLevel": "off",
     "insertDateString.format": "YYYY-MM-DD_hh:mm:ss",
